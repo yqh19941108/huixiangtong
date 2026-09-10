@@ -40,7 +40,7 @@
 
   <g font-size="20" fill="#e2e8f0">
     <rect x="96" y="524" width="150" height="44" rx="22" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.16)"/>
-    <text x="171" y="552" text-anchor="middle">9 类福利</text>
+    <text x="171" y="552" text-anchor="middle">10 类福利</text>
     <rect x="262" y="524" width="220" height="44" rx="22" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.16)"/>
     <text x="372" y="552" text-anchor="middle">现金 + 非现金代缴</text>
     <rect x="498" y="524" width="200" height="44" rx="22" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.16)"/>
