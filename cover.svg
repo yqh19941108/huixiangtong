@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" width="1280" height="640" font-family="'PingFang SC','Microsoft YaHei','Hiragino Sans GB','Noto Sans CJK SC',sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#14203a"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="0.18" cy="0.2" r="0.6">
+      <stop offset="0" stop-color="#6366f1" stop-opacity="0.40"/>
+      <stop offset="1" stop-color="#6366f1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0.85" cy="0.9" r="0.55">
+      <stop offset="0" stop-color="#06b6d4" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#06b6d4" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="logo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7c3aed"/>
+      <stop offset="0.55" stop-color="#4f46e5"/>
+      <stop offset="1" stop-color="#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="hl" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#c4b5fd"/>
+      <stop offset="0.5" stop-color="#7dd3fc"/>
+      <stop offset="1" stop-color="#5eead4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="640" fill="url(#bg)"/>
+  <rect width="1280" height="640" fill="url(#glow1)"/>
+  <rect width="1280" height="640" fill="url(#glow2)"/>
+
+  <!-- 左侧文字区 -->
+  <rect x="92" y="232" width="104" height="104" rx="26" fill="url(#logo)"/>
+  <text x="144" y="305" text-anchor="middle" font-size="66" font-weight="800" fill="#ffffff">惠</text>
+
+  <text x="218" y="312" font-size="60" font-weight="800" fill="#f8fafc">惠享通</text>
+
+  <text x="94" y="420" font-size="40" font-weight="800" fill="url(#hl)">你该领的钱，别让它躺着过期</text>
+
+  <text x="96" y="474" font-size="24" fill="#cbd5e1">输入城市与处境，10 秒算出你能申领的每一笔福利</text>
+
+  <g font-size="20" fill="#e2e8f0">
+    <rect x="96" y="524" width="150" height="44" rx="22" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.16)"/>
+    <text x="171" y="552" text-anchor="middle">9 类福利</text>
+    <rect x="262" y="524" width="220" height="44" rx="22" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.16)"/>
+    <text x="372" y="552" text-anchor="middle">现金 + 非现金代缴</text>
+    <rect x="498" y="524" width="200" height="44" rx="22" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.16)"/>
+    <text x="598" y="552" text-anchor="middle">纯前端 · 零上传</text>
+  </g>
+
+  <!-- 右侧产品示意卡 -->
+  <rect x="820" y="96" width="384" height="448" rx="24" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.12)"/>
+  <rect x="846" y="128" width="44" height="44" rx="12" fill="url(#logo)"/>
+  <text x="868" y="158" text-anchor="middle" font-size="28" font-weight="800" fill="#fff">惠</text>
+  <text x="906" y="158" font-size="24" font-weight="700" fill="#f1f5f9">惠享通 · 福利清单</text>
+  <line x1="846" y1="192" x2="1178" y2="192" stroke="rgba(255,255,255,.12)"/>
+
+  <rect x="846" y="212" width="332" height="48" rx="14" fill="rgba(244,197,66,.12)" stroke="rgba(244,197,66,.32)"/>
+  <text x="1012" y="242" text-anchor="middle" font-size="21" font-weight="700" fill="#f4c542">东莞 · 11 项福利 · 预估 ¥/年</text>
+
+  <g font-size="22">
+    <circle cx="862" cy="306" r="7" fill="#0ea5e9"/>
+    <text x="884" y="313" fill="#e2e8f0">失业保险金</text>
+    <text x="1174" y="313" text-anchor="end" font-weight="700" fill="#f4c542">2070/月</text>
+
+    <circle cx="862" cy="366" r="7" fill="#5eead4"/>
+    <text x="884" y="373" fill="#e2e8f0">失业医保代缴</text>
+    <text x="1174" y="373" text-anchor="end" font-weight="700" fill="#5eead4">个人 0 元</text>
+
+    <circle cx="862" cy="426" r="7" fill="#0e7490"/>
+    <text x="884" y="433" fill="#e2e8f0">技能提升补贴</text>
+    <text x="1174" y="433" text-anchor="end" font-weight="700" fill="#f4c542">800–2400</text>
+
+    <circle cx="862" cy="486" r="7" fill="#8b5cf6"/>
+    <text x="884" y="493" fill="#e2e8f0">公租房 / 育儿补贴</text>
+    <text x="1174" y="493" text-anchor="end" font-weight="700" fill="#c4b5fd">可申领</text>
+  </g>
+
+  <text x="1012" y="534" text-anchor="middle" font-size="16" fill="#94a3b8">纯本地测算 · 不上传个人信息</text>
+</svg>

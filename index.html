@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="LEm2ijTj42FVfW35VWVdmt" data-dm-ref="1"><head data-page-node-id="3FdzXPRoOIpARYXP23MYSb">
+<meta charset="UTF-8" data-page-node-id="rRHFolhSWsdOyFyU3cbl5i">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="7eh7fmTZm69Blb4CX7qMQv"><title data-page-node-id="JwIDtbC5mQrEZURwFo0CPK" data-pnid-children="Dlpj2kxoh5fDhhxKP1qNv6" style="box-sizing:border-box;-webkit-tap-highlight-color:transparent">惠享通 · 一键匹配你该领的每一笔福利</title><title data-page-node-id="3eRCuiZO4xXAJJ0uLDLs8g" data-pnid-children="t9bIfzzRWUIeGCSV7A2Uis" style="box-sizing:border-box;-webkit-tap-highlight-color:transparent">惠享通 · 一键匹配你该领的每一笔福利</title>
+<title>惠享通 · 一键匹配你该领的每一笔福利</title>
+<style>
+  :root{
+    --bg:#0b1020; --ink:#0f172a; --text:#1f2937; --sub:#64748b; --line:#e9edf5;
+    --brand1:#4f46e5; --brand2:#7c3aed; --brand3:#06b6d4;
+    --gold:#d4a017; --gold2:#f4c542;
+    --card:#ffffff; --soft:#f6f8fc;
+  }
+  *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html,body{ margin:0; padding:0; }
+  body{ font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif; color:var(--text); background:#f1f4fb; line-height:1.6; }
+
+  /* ---------- 顶部导航 ---------- */
+  .nav{ position:sticky; top:0; z-index:50; backdrop-filter:saturate(160%) blur(12px);
+        background:rgba(11,16,32,.72); border-bottom:1px solid rgba(255,255,255,.08); }
+  .nav-in{ max-width:1200px; margin:0 auto; padding:14px 24px; display:flex; align-items:center; justify-content:space-between; }
+  .brand{ display:flex; align-items:center; gap:10px; color:#fff; font-weight:800; letter-spacing:.5px; }
+  .brand .logo{ width:34px; height:34px; }
+  .brand small{ display:block; font-size:10px; font-weight:500; color:#aab4d4; letter-spacing:2px; }
+  .nav .meta{ color:#aab4d4; font-size:12px; }
+
+  /* ---------- Hero ---------- */
+  .hero{ position:relative; overflow:hidden; background:
+      radial-gradient(1200px 600px at 80% -10%, rgba(124,58,237,.55), transparent 60%),
+      radial-gradient(900px 500px at 0% 110%, rgba(6,182,212,.40), transparent 55%),
+      linear-gradient(160deg,#0b1020 0%,#111a3a 55%,#0b1020 100%);
+      color:#fff; }
+  .hero::after{ content:""; position:absolute; inset:0;
+      background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+      background-size:38px 38px; -webkit-mask-image:radial-gradient(700px 400px at 50% 30%,#000,transparent); mask-image:radial-gradient(700px 400px at 50% 30%,#000,transparent); }
+  /* 底部羽化：深蓝渐隐到浅色，避免白卡硬压深蓝 */
+  .hero::before{ content:""; position:absolute; left:0; right:0; bottom:0; height:300px; z-index:1;
+      background:linear-gradient(180deg, rgba(241,244,251,0) 0%, #f1f4fb 55%); pointer-events:none; }
+  .hero-in{ position:relative; z-index:2; max-width:1200px; margin:0 auto; padding:72px 24px 200px; text-align:center; }
+  .pill{ display:inline-flex; align-items:center; gap:6px; font-size:12px; color:#cbd5ff;
+      background:rgba(124,58,237,.22); border:1px solid rgba(165,138,255,.4); padding:6px 14px; border-radius:999px; margin-bottom:22px; }
+  .pill .dot{ width:7px; height:7px; border-radius:50%; background:#5eead4; box-shadow:0 0 10px #5eead4; }
+  .hero h1{ font-size:clamp(30px,6vw,52px); line-height:1.12; margin:0 0 16px; font-weight:900; letter-spacing:-.5px; }
+  .hero h1 .hl{ background:linear-gradient(90deg,#c4b5fd 0%,#7dd3fc 50%,#5eead4 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent; }
+  .hero p{ font-size:clamp(15px,2.4vw,18px); color:#c7d0ee; max-width:620px; margin:0 auto 34px; }
+  .stats{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+  .stat{ background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:16px 22px; min-width:120px; }
+  .stat b{ display:block; font-size:26px; font-weight:900; background:linear-gradient(90deg,#fff,#c7d0ee); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .stat span{ font-size:12px; color:#9aa6cf; }
+  .scroll-hint{ position:absolute; left:50%; bottom:26px; transform:translateX(-50%); color:#8b97c4; font-size:12px; animation:bob 1.8s ease-in-out infinite; }
+  @keyframes bob{ 0%,100%{ transform:translate(-50%,0);} 50%{ transform:translate(-50%,8px);} }
+
+  /* ---------- 主体 ---------- */
+  .main{ max-width:1100px; margin:-48px auto 0; padding:0 24px 60px; position:relative; z-index:5; }
+  .glass{ background:rgba(255,255,255,.94); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,.7);
+      border-radius:24px; box-shadow:0 30px 60px -20px rgba(15,23,42,.30); padding:32px 40px; }
+  .sec-title{ display:flex; align-items:center; gap:10px; font-size:15px; font-weight:800; color:var(--ink); margin:4px 0 14px; }
+  .sec-title .n{ width:24px; height:24px; border-radius:8px; background:linear-gradient(135deg,var(--brand1),var(--brand2)); color:#fff;
+      display:grid; place-items:center; font-size:13px; }
+  .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:18px 28px; }
+  @media(max-width:640px){ .glass{ padding:22px 18px; } .hero-in{ padding-left:16px; padding-right:16px; padding-bottom:170px; } .main{ padding-left:16px; padding-right:16px; margin-top:-32px; } .nav-in{ padding:12px 16px; } .hero::before{ height:200px; } .hero h1{ font-size:30px; } }
+  @media(max-width:560px){ .grid2{ grid-template-columns:1fr; } }
+  label{ display:block; font-size:13px; color:var(--sub); margin:0 0 7px; font-weight:600; }
+  select{ width:100%; padding:13px 46px 13px 15px; border:1px solid var(--line); border-radius:13px; font-size:15px; font-weight:600; color:var(--ink); background:#fff; appearance:none; -webkit-appearance:none; cursor:pointer;
+      background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%237c3aed' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><path d='M6 9l6 6 6-6'/></svg><!--pnid:315vIq4Jgkppiv51QCovdA-->"); background-repeat:no-repeat; background-position:right 14px center; background-size:18px 18px;
+      box-shadow:0 1px 2px rgba(15,23,42,.05); transition:.18s; }
+  select:hover{ border-color:#c3cdf5; }
+  select:focus{ outline:none; border-color:var(--brand1); box-shadow:0 0 0 3px rgba(79,70,229,.16); }
+  /* ---------- 自定义下拉（解决原生 option 浮层"硬直"） ---------- */
+  select.select-custom{ display:none; }
+  .dd{ position:relative; width:100%; }
+  .dd-trigger{ position:relative; width:100%; display:flex; align-items:center; justify-content:space-between; gap:8px;
+      padding:13px 44px 13px 15px; border:1px solid var(--line); border-radius:13px; font-size:15px; font-weight:600; color:var(--ink);
+      background:#fff; cursor:pointer; box-shadow:0 1px 2px rgba(15,23,42,.05); transition:.18s; text-align:left; }
+  .dd-trigger:hover{ border-color:#c3cdf5; }
+  .dd.open .dd-trigger{ border-color:var(--brand1); box-shadow:0 0 0 3px rgba(79,70,229,.16); }
+  .dd-caret{ position:absolute; right:14px; top:50%; transform:translateY(-50%); transition:transform .2s; pointer-events:none; }
+  .dd.open .dd-caret{ transform:translateY(-50%) rotate(180deg); }
+  .dd-menu{ position:absolute; left:0; right:0; top:calc(100% + 8px); z-index:40;
+      background:#fff; border:1px solid var(--line); border-radius:14px; padding:6px;
+      box-shadow:0 18px 40px -16px rgba(15,23,42,.45); opacity:0; transform:translateY(-6px); pointer-events:none; transition:.18s; }
+  .dd.open .dd-menu{ opacity:1; transform:translateY(0); pointer-events:auto; }
+  .dd-item{ padding:10px 12px; border-radius:9px; font-size:14px; color:var(--ink); cursor:pointer; transition:.12s; }
+  .dd-item:hover{ background:var(--soft); }
+  .dd-item.on{ background:linear-gradient(135deg, rgba(79,70,229,.12), rgba(124,58,237,.12)); color:var(--brand1); font-weight:700; }
+  .seg{ display:flex; gap:8px; flex-wrap:wrap; }
+  .seg button{ flex:1; min-width:84px; padding:11px 6px; border:1px solid var(--line); background:var(--soft); border-radius:12px; font-size:13px; cursor:pointer; color:var(--ink); font-weight:600; transition:.18s; }
+  .seg button:hover{ border-color:#c3cdf5; }
+  .seg button.on{ background:linear-gradient(135deg,var(--brand1),var(--brand2)); color:#fff; border-color:transparent; box-shadow:0 8px 18px -8px rgba(79,70,229,.7); }
+  .blk{ margin-top:18px; }
+  .calc{ width:100%; margin-top:24px; padding:16px; border:none; border-radius:14px; cursor:pointer;
+      background:linear-gradient(135deg,var(--brand1),var(--brand2)); color:#fff; font-size:17px; font-weight:800; letter-spacing:.5px;
+      box-shadow:0 16px 30px -12px rgba(79,70,229,.8); transition:.2s; }
+  .calc:hover{ transform:translateY(-2px); box-shadow:0 22px 40px -14px rgba(79,70,229,.9); }
+  .calc:active{ transform:translateY(0); }
+  .note{ font-size:12px; color:var(--sub); margin-top:12px; text-align:center; }
+
+  /* ---------- 结果 ---------- */
+  #result{ margin-top:26px; }
+  .overview{ background:linear-gradient(135deg,#111a3a,#1e1b4b); border-radius:22px; padding:26px 24px; color:#fff; box-shadow:0 24px 50px -22px rgba(15,23,42,.6); }
+  .overview .lab{ font-size:13px; color:#aab4d4; }
+  .overview .big{ font-size:46px; font-weight:900; line-height:1; margin:6px 0 4px; background:linear-gradient(90deg,#f4c542,#f9a8d4); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .overview .sub2{ font-size:13px; color:#c7d0ee; }
+  .chips{ display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
+  .chip{ font-size:12px; padding:5px 12px; border-radius:999px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.16); color:#dbe2ff; }
+
+  .govtip{ display:flex; gap:12px; align-items:flex-start; background:linear-gradient(135deg,#fffbeb,#fef3c7); border:1px solid #fde68a; border-radius:16px; padding:14px 16px; margin-top:16px; font-size:13px; color:#92660b; line-height:1.7; }
+  .govtip .gi{ font-size:18px; line-height:1.2; flex:0 0 auto; }
+  .govtip b{ color:#b45309; }
+
+  .group{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:18px 18px 8px; margin-top:16px; box-shadow:0 12px 30px -22px rgba(15,23,42,.4); }
+  .group .gh{ display:flex; align-items:center; gap:10px; margin-bottom:12px; }
+  .group .gh .ic{ width:30px; height:30px; border-radius:9px; display:grid; place-items:center; color:#fff; font-size:15px; font-weight:800; }
+  .group .gh h3{ margin:0; font-size:16px; color:var(--ink); }
+  .group .gh .cnt{ margin-left:auto; font-size:12px; color:var(--sub); background:var(--soft); padding:3px 10px; border-radius:999px; }
+  .item{ border:1px solid var(--line); border-radius:14px; padding:14px 16px; margin-bottom:12px; background:linear-gradient(180deg,#fff,#fbfcff); transition:.18s; }
+  .item:hover{ transform:translateY(-2px); box-shadow:0 14px 28px -18px rgba(15,23,42,.5); border-color:#d6ddf3; }
+  .item .top{ display:flex; align-items:baseline; justify-content:space-between; gap:12px; }
+  .item .nm{ font-weight:800; color:var(--ink); font-size:15px; }
+  .item .amt{ color:var(--gold); font-weight:900; font-size:17px; white-space:nowrap; }
+  .item .amt.nc{ color:#0e7490; font-size:13.5px; font-weight:800; background:rgba(14,116,144,.1); padding:2px 9px; border-radius:999px; white-space:nowrap; }
+  .item .ds{ font-size:13px; color:var(--sub); margin:6px 0 10px; }
+  .item a{ display:inline-flex; align-items:center; gap:4px; font-size:13px; font-weight:700; color:var(--brand1); text-decoration:none; border:1px solid #d8def5; padding:6px 12px; border-radius:999px; transition:.18s; }
+  .item a:hover{ background:var(--brand1); color:#fff; border-color:transparent; }
+  .app-txt{ font-size:14.5px; color:#374151; line-height:1.7; }
+  .app-line{ display:inline-flex; align-items:center; flex-wrap:wrap; gap:10px; }
+  .app-btn{ display:inline-flex; align-items:center; gap:5px; font-size:13px; font-weight:700; color:#fff !important; text-decoration:none; padding:5px 13px; border-radius:999px; background:linear-gradient(135deg,var(--brand1),var(--brand2)); border:1px solid transparent; box-shadow:0 4px 12px -4px rgba(79,70,229,.45); transition:.18s; flex:0 0 auto; }
+  .app-btn:hover{ filter:brightness(1.1); box-shadow:0 6px 16px -4px rgba(79,70,229,.6); }
+  .steps{ font-size:14.5px; color:#0f766e; line-height:1.75; font-weight:500; }
+  /* ---- 详情行：标签/值两列，拉开间距 ---- */
+  .detail{ display:flex; flex-direction:column; gap:12px; margin-top:2px; }
+  /* 基线对齐：标签(申请入口等)与值的第一行文字齐平，单行/多行都对齐 */
+  .row{ display:flex; align-items:baseline; gap:14px; }
+  .row .k{ flex:0 0 auto; min-width:78px; font-size:13px; font-weight:700; color:#64748b; line-height:1.5; }
+  .row .v{ flex:1; min-width:0; font-size:14.5px; color:#1e293b; line-height:1.8; }
+
+  .empty{ text-align:center; padding:40px 16px; color:var(--sub); }
+  .empty .e{ font-size:40px; }
+
+  .actions{ display:flex; gap:10px; margin-top:18px; }
+  .actions button{ flex:1; padding:13px; border-radius:12px; font-size:14px; font-weight:700; cursor:pointer; border:1px solid var(--line); background:#fff; color:var(--ink); transition:.18s; }
+  .actions button:hover{ border-color:var(--brand1); color:var(--brand1); }
+
+  footer{ max-width:1100px; margin:30px auto; padding:0 24px; color:var(--sub); font-size:12px; line-height:1.8; }
+  footer b{ color:var(--ink); }
+  .toast{ position:fixed; left:50%; bottom:30px; transform:translateX(-50%) translateY(20px); background:#0f172a; color:#fff; padding:12px 22px; border-radius:999px; font-size:14px; opacity:0; pointer-events:none; transition:.3s; z-index:99; }
+  .toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+
+  /* ---------- 分享卡片弹窗 ---------- */
+  .modal{ position:fixed; inset:0; z-index:200; display:none; align-items:center; justify-content:center; background:rgba(11,16,32,.72); backdrop-filter:blur(4px); padding:18px; }
+  .modal.show{ display:flex; }
+  .modal-box{ background:#fff; border-radius:18px; width:100%; max-width:420px; max-height:88vh; overflow:auto; padding:14px; box-shadow:0 30px 60px -20px rgba(0,0,0,.5); }
+  .modal-box img{ width:100%; border-radius:12px; display:block; background:#0b1020; }
+  .modal-actions{ display:flex; gap:10px; margin-top:12px; }
+  .modal-actions button{ flex:1; padding:12px; border-radius:12px; font-size:14px; font-weight:700; cursor:pointer; border:1px solid var(--line); background:#fff; color:var(--ink); transition:.18s; }
+  .modal-actions button:hover{ border-color:var(--brand1); }
+  .modal-actions .pri{ background:linear-gradient(135deg,var(--brand1),var(--brand2)); color:#fff; border:none; }
+  .modal-tip{ font-size:12px; color:var(--sub); text-align:center; margin-top:8px; }
+
+  .reveal{ animation:fadeUp .55s ease both; }
+  @keyframes fadeUp{ from{ opacity:0; transform:translateY(18px);} to{ opacity:1; transform:translateY(0);} }
+</style>
+<style id="__dm_no_drag_style__">* { -webkit-user-drag: none !important; }</style><style id="__dm_bindable_badge_style__">[data-sp-bindable="database"]{outline:1px dashed #0088ff;outline-offset:2px;border-radius:4px;}[data-sp-bindable="database"] *{pointer-events:none !important;transition:none !important;animation:none !important;}[data-sp-bindable="database"]{transition:none !important;animation:none !important;}</style></head>
+<body data-page-node-id="4Ds5hU5REv8qjw6mSqmqcP" style="">
+
+<!-- 导航 -->
+<div class="nav" data-page-node-id="W5zbUSQqLA43WD3uzBFacb" style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; position: relative; z-index: 50; background: rgb(26, 35, 54); border-bottom: 1px solid rgba(255, 255, 255, 0.06); box-shadow: rgba(0, 0, 0, 0.4) 0px 6px 18px -10px;">
+  <div class="nav-in" data-page-node-id="DFyfVyYYrhiu4nNU3RE3Cu">
+    <div class="brand" data-page-node-id="BzsyM1xKhb4Fq04J1wtU4n">
+      <svg class="logo" viewBox="0 0 40 40" fill="none" data-page-node-id="GfeO7JmcGdQ3IJcmeI5Svx">
+        <defs data-page-node-id="QFRbM7zzieKXNEX6sPWpO4"><linearGradient id="g" x1="0" y1="0" x2="1" y2="1" data-page-node-id="sOf7v2hzkIrAUudgbDZtkE"><stop offset="0" stop-color="#7c3aed" data-page-node-id="aUR2Aw8wASQSAtWHpVvPOb"></stop><stop offset="1" stop-color="#06b6d4" data-page-node-id="cEFvnjhtvkqlaXgAXx7YUt"></stop></linearGradient></defs>
+        <rect x="2" y="2" width="36" height="36" rx="10" fill="url(#g)" data-page-node-id="jvIi7HGRZMW1LGCqOmHsUq"></rect><text x="20" y="21" text-anchor="middle" dominant-baseline="middle" font-size="23" font-weight="800" fill="#fff" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">惠</text>
+      
+        
+        
+        
+        
+      
+      
+        </svg>
+      <div data-page-node-id="J4duG4mlxSJ6KAE1qm7S2z">惠享通</div>
+    </div>
+    <div class="meta" data-page-node-id="Zg0JJQI05MYCZADyTrbdj1">数据更新 2026.09</div>
+  </div>
+</div>
+
+<!-- Hero -->
+<section class="hero" data-page-node-id="VqFlbpCGzrh5OPyP3oLfXd">
+  <div class="hero-in" data-page-node-id="Oondk0fhF0Lor0juPBG3LY">
+    <div class="pill" data-page-node-id="hD7q0mQg6pDVSQbdxqWdOj"><span class="dot" data-page-node-id="M9O9o7LoNQvOBQ7JuUyeDu"></span>已收录 3 城 · 9 大类 · 40+ 政策条目</div>
+    <h1 data-page-node-id="QKRC1LvobTTlQuRFHLhAqu" style="box-sizing: border-box; margin: 0px 0px 16px; font-weight: 900; font-size: clamp(30px, 6vw, 52px); line-height: 1.12; letter-spacing: -0.5px; color: rgb(255, 255, 255);">你该领的钱，<br data-page-node-id="nZbBA3PMfxHuRU2hzDmNju" style="box-sizing:border-box"><span data-page-node-id="C22gPLP7PhtBHOMkC5XuTO" class="hl">别让它躺着过期</span></h1>
+    <p data-page-node-id="jLcDlZPx78Y9MOPFojIkkm" class="tagline" style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; font-size: clamp(15px, 2.4vw, 18px); color: rgb(199, 208, 238); max-width: 620px; margin: 0px auto 34px; line-height: 1.7; cursor: text; white-space: pre-wrap;">填写真实处境，30 秒匹配你能申领的全部社会福利。不限学历、不限身份——失业、低保、育儿、养老、残疾，一笔都不漏。每条直接给申请条件、准备材料、官方入口，照着办就行。​</p>
+    <div class="stats" data-page-node-id="WTeh1xKMFYx1mmWJ5gAUHv">
+      <div class="stat" data-page-node-id="JD3E4IK5mZBV7LFLSGLb2H"><b data-page-node-id="9C0sksMQQA5lokNBSAaOzG">3</b><span data-page-node-id="IXaicWc0EotW9S6iel1icA">核心城市</span></div>
+      <div class="stat" data-page-node-id="q2mrRachp01sCBKOXsAicL"><b data-page-node-id="sJHebmmDICupK9cTXtBttz">9</b><span data-page-node-id="8zHcw1nDRXr8EXJMItXffz">福利大类</span></div>
+      <div class="stat" data-page-node-id="9L3WdLciAKgBYbmpOE1HDs"><b data-page-node-id="tmGM0WVYtHBao4hIGIM2Hd">40+</b><span data-page-node-id="c0ginmftyjaATzQ2Oal5u8">政策条目</span></div>
+    </div>
+  </div>
+  <div class="scroll-hint" data-page-node-id="7WUmzDymHSmE25AbGzl98K">↓ 下滑立即测算</div>
+</section>
+
+<!-- 主体 -->
+<div class="main" data-page-node-id="qQuoun4I22zhpjuf37VJfX">
+  <div class="glass reveal" data-page-node-id="5bwRqigoJeZ9nutKKxEpgV">
+    <div class="sec-title" data-page-node-id="KkzxC7wLoCq3XzWFxkVot6"><span class="n" data-page-node-id="vDBpGhhp3GEOvAoHdsO9ua">①</span>基本情况</div>
+    <div class="grid2" data-page-node-id="yPUrCamFDq8MMmWQ3Ztzx1">
+      <div data-page-node-id="Y7eC8Hlpr1uYsRng7H7exx"><label data-page-node-id="xOrjJVqYNEduwD6AyAgQ8R">所在城市</label>
+        <select id="city" class="select-custom" data-page-node-id="hu0xejouJUXZUWYjYOQfBC"><option value="dg" data-page-node-id="WxG1qVMTAM4UkRnXUyJkmD">东莞</option><option value="sz" data-page-node-id="fzoiWEKFTf8I5H4Kzg7TDk">深圳</option><option value="gz" data-page-node-id="Fbl6m9WWo6rLZghQ2EGydS">广州</option></select></div>
+      <div data-page-node-id="sxvRkZFNuxtIV2rxFqHggl"><label data-page-node-id="M491q1ipsSIVzpz25GAlTe">年龄段</label>
+        <select id="age" class="select-custom" data-page-node-id="2EqlSiCJ7BeApPN3ohAfN7"><option value="student" data-page-node-id="u3c0O2c0nidSfl93qUuEQD">在校学生</option><option value="youth" selected="" data-page-node-id="s1NGgvZaEiE5kEqOi2qdh2">青年（18-59）</option><option value="elder" data-page-node-id="SSER7V9JEKMv86GcGfGUtC">老年人（60及以上）</option></select></div>
+    </div>
+    <div class="blk" data-page-node-id="VFH0ceEplvFM0lTy1I8GDU"><label data-page-node-id="ImkrzVudgTVtHGqvBME7Fg">当前就业状态</label>
+      <div class="seg" id="employ" data-page-node-id="bT2tNYy5LUVQmIbk51i2PZ">
+        <button data-v="work" data-page-node-id="JPACUjeBEX3tKi9stZUTrx">在职</button>
+        <button data-v="unemployed" class="on" data-page-node-id="ncta1IdjlvgbczDbkK05Ye">失业/待业</button>
+        <button data-v="flexible" data-page-node-id="MRWedrJDx7DhXQsFaBz36b">灵活就业</button>
+        <button data-v="retire" data-page-node-id="ufhs96ayGEoJxbMQih8mju">已退休</button>
+      </div></div>
+
+    <div class="sec-title" style="margin-top:24px" data-page-node-id="wVoAXTxMM5VvHsHZkmKRFl"><span class="n" data-page-node-id="TUEV12BDFv77XHLuRYEnNV">②</span>困难与身份</div>
+    <div class="grid2" data-page-node-id="47IQBe9hqglbEbFcmf0AVd">
+      <div data-page-node-id="hDVsL4azCMFL0MGfECaHNh"><label data-page-node-id="3yzmH8inbZzfNswOlwZAcz">是否经认定的"就业困难人员"</label>
+        <div class="seg" id="hard" data-page-node-id="nefC90VK9EiBHlDLjxWLIy"><button data-v="1" data-page-node-id="MDHMWhabqfvzFKCU6an2ws">是</button><button data-v="0" class="on" data-page-node-id="iFfPPPhJgNJiBrVQcBVp2o">否/不清楚</button></div></div>
+      <div data-page-node-id="uzFwOC5G5OyMDCWNqCBuCt"><label data-page-node-id="KFR8ft3UhiCTXABTXHJtBj">家庭人均收入大致档位</label>
+        <div class="seg" id="income" data-page-node-id="HfqV9rsSA9qjs66UTpVTd5"><button data-v="low" data-page-node-id="aYSfHUEZGJ9y00w5v64SEY">低保/特困</button><button data-v="edge" data-page-node-id="oVtJDBUyp5gdzz9ejWGem6">低保边缘或低收入</button><button data-v="normal" class="on" data-page-node-id="eMTv5uW2DRlmBTWveyQiCB">普通</button></div></div>
+    </div>
+    <div class="blk" data-page-node-id="akvPymZvLRO49ZoPNzvYAL"><label data-page-node-id="0A8RuszUWhPVfqxIkbqKRU">户籍 / 居住情况</label>
+      <div class="seg" id="hukou" data-page-node-id="kSdFGoGpTvH83RDekgPS1q"><button data-v="local" data-page-node-id="hHqA9WUNuTBGs6KFcbigaB">本地户籍</button><button data-v="permit" data-page-node-id="U42t8y2CO0zXtTEVEdPFXD">持居住证</button><button data-v="new" data-page-node-id="5sBQnq0TEoclo9HyjWO6W4">新市民/无</button></div></div>
+
+    <div class="sec-title" style="margin-top:24px" data-page-node-id="HzeQuA4GLvC7WF9BDvfkFv"><span class="n" data-page-node-id="AXV0pcDqgEMvJivCm9g31v">③</span>家庭与健康</div>
+    <div class="grid2" data-page-node-id="gdJvbtQWT0dvrjadyeQwak">
+      <div data-page-node-id="cArqznGTyt2dCQyltq3z9d"><label data-page-node-id="sMwqrKUzy03jGo1iFSkNvl">是否有未成年子女</label><div class="seg" id="kids" data-page-node-id="vr6vgXb8Fvq3OFcC84srz6"><button data-v="1" data-page-node-id="lZixwVpMC2MCKvjv9EIFNj">有</button><button data-v="0" class="on" data-page-node-id="tFmdW4sl7b709GaR3WhUKy">无</button></div></div>
+      <div data-page-node-id="QPMEo2NwwJPsQHuFqE9ub9"><label data-page-node-id="iCkjVAuOIEYVsrO4JNTt1V">同住 60 岁以上老人</label><div class="seg" id="elderHome" data-page-node-id="iiFAV9KqfF9mWkwDuDyV23"><button data-v="1" data-page-node-id="wEngVG5sR6sBPUKUHQCFpO">有</button><button data-v="0" class="on" data-page-node-id="vyAD6OeY0yHhDskaZ9NATc">无</button></div></div>
+      <div data-page-node-id="8GDCJHrHUNJd3Z9RCPhyu9"><label data-page-node-id="UYGoJ8BvnkziT5nc0CMWWZ">本人/家属残疾</label><div class="seg" id="disabled" data-page-node-id="W3SgrQDtSiTdzXOGyNykTA"><button data-v="1" data-page-node-id="IMcyGoA1yxGMFkW4auiGhK">有</button><button data-v="0" class="on" data-page-node-id="g4diXsohW1LrHiqBGJbqEq">无</button></div></div>
+      <div data-page-node-id="kkouTKGvgT8Jswukjt3lGp"><label data-page-node-id="obRxY0HccidRXCr4G1G7qw">重大疾病/大额医疗支出</label><div class="seg" id="sick" data-page-node-id="8tGmatGfoz9U6rauvpJiEU"><button data-v="1" data-page-node-id="t4xMznMXMmfJs2FOHI03k0">有</button><button data-v="0" class="on" data-page-node-id="gkCcjcGgvVB2pu1Ggqev0l">无</button></div></div>
+    </div>
+    <div class="blk" data-page-node-id="giR3NfIRKSK1AYiqmGU0K6"><label data-page-node-id="JGF0iyfQoUFrSNKfAMxrGs">退役军人 / 优抚对象</label><div class="seg" id="vet" data-page-node-id="lh4n5Pclidv22laQe49Skp"><button data-v="1" data-page-node-id="QWurpoXFvbl7H75D39ZHPs">是</button><button data-v="0" class="on" data-page-node-id="uTJ6rLuDjhkwzHXWMahjB5">否</button></div></div>
+
+    <div class="sec-title" style="margin-top:24px" data-page-node-id="pKx335vaH7R4SIyluXAux6"><span class="n" data-page-node-id="nZ9eDIO6RjZUsgoerdV0ah">④</span>学历 <span style="font-size:12px;color:var(--sub);font-weight:500" data-page-node-id="CdrtmPAoWFkFtfj1FhcdqM">（仅影响"人才类"，没有也能领其他）</span></div>
+    <div class="grid2" data-page-node-id="lYFA0iEVy9tf8egzwIVZsB">
+      <div data-page-node-id="FVmRfM2k9PO1Awp9y0CPzd"><select id="edu" class="select-custom" data-page-node-id="uVRRTT38spAc0MiSwxK0J4"><option value="below" data-page-node-id="RPWKKSHkpHQQpDe2KgDoW0">本科以下</option><option value="bk" data-page-node-id="xJ1tMav3zHQiMDEYXHJzwC">本科</option><option value="ss" data-page-node-id="p4gZ1ioSl6v0oNtUUhA0f9">硕士</option><option value="bs" data-page-node-id="cKZEn9yObtA2Z5mAgYWVTh">博士</option><option value="bsh" data-page-node-id="af3JaBsGnkQTYuZDCbwBRJ">博士后</option></select></div>
+    </div>
+
+    <button class="calc" onclick="run()" data-page-node-id="fSuDxhZdFsFPN7fcX30z1y">立即测算我能领哪些福利</button>
+    <div class="note" data-page-node-id="EWQb5OKu59bYCdUczE273A">本工具为政策信息聚合与估算参考，非官方渠道；所有金额、条件以政府最新公告为准。</div>
+  </div>
+
+  <div id="result" data-page-node-id="va97l3HBs6emcxtczEMoHk"></div>
+
+  <footer data-page-node-id="kHtFFSpHrMgk3tAzFUHJqF" style=""><b data-page-node-id="ogj7TLhCFlB1NqIfKFPKku">关于惠享通</b>：一个纯前端的福利匹配演示产品，目标是"通过个人信息，查询用户可申领的社会福利"。<br data-page-node-id="jRNdn1Ni4IAIZR16i8hp25">
+    <b data-page-node-id="M0pUgZF96If6BAxEEuxgOq">数据来源</b>：东莞/深圳/广州民政、人社、卫健部门 2026 年公开文件，及国家 2026 育儿补贴政策。<br data-page-node-id="TYtIZZ3w9mgV3ejTKufomm">
+    <b data-page-node-id="vSXw3IJOLa9VjpjLgyjSBz">隐私</b>：本页为离线静态页面，<b data-page-node-id="hhrTWonpTF3TzwRlrcbnG9">不上传任何个人信息</b>；测算结果仅在你本地浏览器生成。<br data-page-node-id="ajBd5oYpGchYoM9L0lCn2n">
+    <b data-page-node-id="WQXVRHmG0wIpcR7xh8li40">免责</b>：金额多为"参考区间/上限"，含一次性补贴，实际以官方申领为准。政策会动态调整，请点「申请入口」直达办理、点「政策说明」核对官方原文。
+  </footer>
+</div>
+
+<div class="toast" id="toast" data-page-node-id="oW9phJUkm5qkxjXczIQIL7">已复制结果</div>
+
+<!-- 分享卡片弹窗 -->
+<div class="modal" id="cardModal" onclick="if(event.target===this)closeCard()">
+  <div class="modal-box">
+    <img id="cardImg" alt="福利清单分享卡片">
+    <div class="modal-actions">
+      <button class="pri" onclick="downloadCard()">保存图片</button>
+      <button onclick="closeCard()">关闭</button>
+    </div>
+    <div class="modal-tip">手机端可长按图片保存到相册</div>
+  </div>
+</div>
+
+<script src="policies.js"></script>
+<script>
+// === [2026-09-10] 改动BEGIN：L(标准金额)/SRC(政策链接)/POLICIES(福利条目) 已外置至 policies.js，本文件不再写死政策数据；改政策只改 policies.js ===
+const cityName = c => ({dg:'东莞',sz:'深圳',gz:'广州'}[c]);
+// === [2026-09-10] 改动END ===
+const catColor = {'失业保障':'#0ea5e9','收入兜底':'#f59e0b','住房':'#8b5cf6','医疗':'#ef4444','养老':'#14b8a6','育儿':'#ec4899','残疾':'#6366f1','退役':'#b45309','技能':'#0e7490','人才':'#4f46e5'};
+const catIcon = {'失业保障':'失','收入兜底':'兜','住房':'住','医疗':'医','养老':'养','育儿':'育','残疾':'残','退役':'役','技能':'技','人才':'才'};
+
+function run(){
+  const i = {
+    city:val('city'), age:val('age'), employ:seg('employ'),
+    hard:+seg('hard'), income:seg('income'), hukou:seg('hukou'),
+    kids:+seg('kids'), elderHome:+seg('elderHome'), disabled:+seg('disabled'),
+    sick:+seg('sick'), vet:+seg('vet'), edu:val('edu')
+  };
+  const items = match(i);
+  render(i, items);
+  document.getElementById('result').scrollIntoView({behavior:'smooth', block:'start'});
+}
+function val(id){ return document.getElementById(id).value; }
+function seg(id){ const b=document.querySelector('#'+id+' button.on'); return b?b.dataset.v:'0'; }
+
+// === [2026-09-10] 改动BEGIN：match 改为数据驱动，遍历 policies.js 的 POLICIES，test(i) 命中即组装对象（字段与原 out.push 完全一致，渲染逻辑无需改动） ===
+function match(i){
+  const c=i.city, out=[];
+  POLICIES.forEach(function(p){
+    if(p.test(i)){
+      const amt = typeof p.amt==='function'? p.amt(i,c) : (p.amt||'');
+      const money = typeof p.money==='function'? p.money(i,c) : (p.money||null);
+      const link = typeof p.link==='function'? p.link(i,c) : (p.link||'');
+      out.push({cat:p.cat, nm:p.nm, amt:amt, money:money, per:p.per||null, cash:!!p.cash,
+        ds:p.ds, cond:p.cond, doc:p.doc, app:p.app, apptxt:p.apptxt, steps:p.steps, link:link});
+    }
+  });
+  return out;
+}
+// === [2026-09-10] 改动END ===
+
+function annual(items){
+  let s=0; items.forEach(it=>{ if(it.money&&it.per){ s += it.per==='month'? it.money*12 : it.money; } }); return s;
+}
+function fmt(n){ return n.toLocaleString('zh-CN'); }
+
+function render(i, items){
+  window.__last={ i:i, items:items };
+  const R=document.getElementById('result');
+  if(!items.length){
+    R.innerHTML='<div class="glass empty reveal"><div class="e">🔍</div><p>当前选择暂未匹配到明显项，可放宽条件或核对官方渠道。</p></div>';
+    return;
+  }
+  const cats=[...new Set(items.map(x=>x.cat))];
+  const total=annual(items);
+  const nc=items.filter(x=>x.cash===false).length;
+  const order=['失业保障','收入兜底','住房','医疗','养老','育儿','残疾','退役','技能','人才'];
+
+  let h='<div class="overview reveal">';
+  h+='<div class="lab">'+cityName(i.city)+' · 根据你的处境，约可关注</div>';
+  h+='<div class="big">'+items.length+' 项福利</div>';
+  h+='<div class="sub2">覆盖 '+cats.length+' 个类别 · 可量化补贴预估 <b style="color:#f4c542">¥'+fmt(total)+'/年</b>（含一次性，仅供参考）'+(nc?' · 另有 <b style="color:#0e7490">'+nc+' 项非现金福利</b>（代缴/优待/免费）':'')+'</div>';
+  h+='<div class="chips">'+cats.map(c=>'<span class="chip">'+c+'</span>').join('')+'</div>';
+  h+='</div>';
+  h+='<div class="govtip reveal"><span class="gi">💡</span><div><b>在官方平台搜到很多条？三招锁定你要的：</b><br>① 优先用「粤省事」小程序，按 <b>社保·就业 → 失业</b> 这类<b>板块</b>直达，根本不用搜；<br>② 要搜就<b>直接粘贴标准事项全称</b>（如「失业保险技能提升补贴申领」），结果第一条就是；<br>③ 搜出多条时，认准<b>「实施主体」=你所在市/区对应部门</b>（如东莞市人社局）且带<b>「办事指南」</b>标识的那条，别点第三方链接/广告。</div></div>';
+
+  order.forEach(cat=>{
+    const list=items.filter(x=>x.cat===cat); if(!list.length) return;
+    const col=catColor[cat], ic=catIcon[cat];
+    h+='<div class="group reveal"><div class="gh"><div class="ic" style="background:'+col+'">'+ic+'</div><h3>'+cat+'</h3><span class="cnt">'+list.length+' 项</span></div>';
+    list.forEach(it=>{
+      h+='<div class="item"><div class="top"><span class="nm">'+it.nm+'</span>'+((it.money)?'<span class="amt">'+it.amt.split('（')[0].split('(')[0]+'</span>':(it.cash===false?'<span class="amt nc">'+it.amt+'</span>':''))+'</div>';
+      h+='<div class="ds">'+it.ds+'</div>';
+      h+='<div class="detail">';
+      h+='<div class="row"><span class="k">✅ 申请条件</span><span class="v">'+it.cond+'</span></div>';
+      h+='<div class="row"><span class="k">📋 准备材料</span><span class="v">'+it.doc+'</span></div>';
+      h+='<div class="row"><span class="k">📍 申请入口</span><span class="v"><span class="app-line"><span class="app-txt">'+it.apptxt+'</span><a class="app-btn" href="'+it.app+'" target="_blank" rel="noopener">前往 ↗</a></span></span></div>';
+      h+='<div class="row"><span class="k">📲 办理路径</span><span class="v steps">'+it.steps+'</span></div>';
+      h+='<div class="row"><span class="k">📖 政策说明</span><span class="v"><a href="'+it.link+'" target="_blank" rel="noopener">官方文件核对 ↗</a></span></div>';
+      h+='</div></div>';
+    });
+    h+='</div>';
+  });
+
+  h+='<div class="actions"><button class="pri" onclick="genCard()">生成分享卡片</button><button onclick="window.scrollTo({top:0,behavior:\'smooth\'})">重新测算</button></div>';
+  R.innerHTML=h;
+  countUp(document.querySelector('.overview .big'), items.length);
+}
+function countUp(el, target){
+  let cur=0; const step=Math.max(1,Math.ceil(target/30));
+  const t=setInterval(()=>{ cur+=step; if(cur>=target){cur=target; clearInterval(t);} el.textContent=cur+' 项福利'; }, 22);
+}
+function copyResult(){
+  const txt=document.getElementById('result').innerText;
+  navigator.clipboard?.writeText(txt).then(()=>toast('已复制匹配结果')).catch(()=>toast('复制失败，请手动选择'));
+}
+function toast(m){ const t=document.getElementById('toast'); t.textContent=m; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),1800); }
+
+// === [2026-09-10] 生成分享卡片：canvas 离屏绘制福利清单长图，零依赖、可离线保存 ===
+let __cardURL='';
+function roundRect(c,x,y,w,h,r){ c.beginPath(); c.moveTo(x+r,y); c.arcTo(x+w,y,x+w,y+h,r); c.arcTo(x+w,y+h,x,y+h,r); c.arcTo(x,y+h,x,y,r); c.arcTo(x,y,x+w,y,r); c.closePath(); }
+function genCard(){
+  const d=window.__last; if(!d){ toast('请先测算'); return; }
+  const i=d.i, items=d.items;
+  const W=750, pad=44, innerW=W-pad*2, scale=2;
+  const m0=document.createElement('canvas').getContext('2d');
+  const f=function(px,bold){ return (bold?'bold ':'')+px+'px -apple-system,"PingFang SC","Microsoft YaHei",sans-serif'; };
+  function wrap(text,font,maxW){ m0.font=font; const chars=Array.from(text); let line='',lines=[]; for(const ch of chars){ const t=line+ch; if(m0.measureText(t).width>maxW&&line){ lines.push(line); line=ch; } else line=t; } if(line) lines.push(line); return lines; }
+
+  // ---- 先量高度 ----
+  let y=54; y+=46; y+=40; y+=24;
+  const sumH=110; y+=sumH; y+=18;
+  const itemHs=items.map(function(it){
+    const nm=wrap(it.nm,f(32,true),innerW-44);
+    const ds=wrap(it.ds,f(24,false),innerW-44);
+    return 28 + nm.length*42 + 10 + (it.money?40:(it.cash===false?42:0)) + 8 + ds.length*34 + 26;
+  });
+  const gap=16, itemsGap=itemHs.length?(itemHs.length-1)*gap:0;
+  const footerH=110;
+  const H=y + itemHs.reduce(function(a,b){return a+b;},0) + itemsGap + 30 + footerH;
+
+  // ---- 绘制 ----
+  const cv=document.createElement('canvas'); cv.width=W*scale; cv.height=H*scale;
+  const c=cv.getContext('2d'); c.scale(scale,scale);
+  const bg=c.createLinearGradient(0,0,0,H); bg.addColorStop(0,'#0b1020'); bg.addColorStop(.55,'#111a3a'); bg.addColorStop(1,'#0b1020');
+  c.fillStyle=bg; c.fillRect(0,0,W,H);
+
+  let yy=54;
+  const g=c.createLinearGradient(0,0,W,0); g.addColorStop(0,'#c4b5fd'); g.addColorStop(.5,'#7dd3fc'); g.addColorStop(1,'#5eead4');
+  c.textBaseline='alphabetic';
+  c.fillStyle=g; c.font=f(34,true); c.fillText('惠享通', pad, yy+30);
+  c.fillStyle='rgba(255,255,255,.5)'; c.font=f(17,false); c.fillText('惠享通 · 福利匹配引擎', pad+122, yy+27);
+  yy+=46;
+  c.fillStyle='#fff'; c.font=f(30,true); c.fillText('你适配的福利清单', pad, yy+24);
+  yy+=40+24;
+
+  const total=annual(items);
+  c.fillStyle='rgba(255,255,255,.08)'; roundRect(c,pad,yy,innerW,sumH,18); c.fill();
+  c.fillStyle='#c7d0ee'; c.font=f(22,false); c.fillText(cityName(i.city)+' · 根据你的处境', pad+20, yy+38);
+  c.fillStyle='#fff'; c.font=f(30,true); c.fillText(items.length+' 项福利可关注', pad+20, yy+78);
+  c.textAlign='right'; c.fillStyle='#f4c542'; c.font=f(24,true);
+  c.fillText(total>0?('预估 ¥'+fmt(total)+' /年'):'金额以官方为准', pad+innerW-20, yy+74); c.textAlign='left';
+  yy+=sumH+18;
+
+  items.forEach(function(it,idx){
+    const h=itemHs[idx], col=catColor[it.cat]||'#4f46e5';
+    c.fillStyle='rgba(255,255,255,.06)'; roundRect(c,pad,yy,innerW,h,16); c.fill();
+    c.fillStyle=col; roundRect(c,pad,yy,6,h,3); c.fill();
+    const ix=pad+22; let iy=yy+28;
+    const nm=wrap(it.nm,f(32,true),innerW-44);
+    c.fillStyle='#fff'; c.font=f(32,true); nm.forEach(function(ln){ c.fillText(ln,ix,iy+26); iy+=42; });
+    if(it.money){ c.textAlign='right'; c.fillStyle='#f4c542'; c.font=f(26,true); c.fillText(it.amt.split('（')[0].split('(')[0], pad+innerW-20, iy-10); c.textAlign='left'; }
+    else if(it.cash===false){ c.fillStyle='#5eead4'; c.font=f(22,true); c.textAlign='right'; c.fillText(it.amt, pad+innerW-20, iy+24); c.textAlign='left'; iy+=34; }
+    iy+=8;
+    const ds=wrap(it.ds,f(24,false),innerW-44);
+    c.fillStyle='#aab4d4'; c.font=f(24,false); ds.slice(0,3).forEach(function(ln){ c.fillText(ln,ix,iy+22); iy+=34; });
+    yy+=h+gap;
+  });
+
+  c.fillStyle='rgba(255,255,255,.5)'; c.font=f(20,false);
+  c.fillText('数据截至 2026.09 · 金额/条件以政府最新公告为准', pad, yy+30);
+  c.fillText('本卡片由 惠享通 生成 · 纯本地测算，不上传个人信息', pad, yy+60);
+
+  __cardURL=cv.toDataURL('image/png');
+  document.getElementById('cardImg').src=__cardURL;
+  document.getElementById('cardModal').classList.add('show');
+}
+function closeCard(){ document.getElementById('cardModal').classList.remove('show'); }
+function downloadCard(){ if(!__cardURL) return; const a=document.createElement('a'); a.href=__cardURL; a.download='惠享通_福利清单.png'; a.click(); }
+
+// === [2026-09-10] 自定义下拉组件：隐藏原生 select，按选项生成圆角浮层，保持 val() 取值不变 ===
+function initDropdowns(){
+  document.querySelectorAll('select.select-custom').forEach(function(sel){
+    if(sel.dataset.dd) return;
+    sel.dataset.dd = '1';
+    var cur = sel.options[sel.selectedIndex] ? sel.options[sel.selectedIndex].textContent : sel.options[0].textContent;
+    var wrap = document.createElement('div');
+    wrap.className = 'dd';
+    wrap.innerHTML =
+      '<button type="button" class="dd-trigger"><span class="dd-val">'+cur+'</span>'+
+      '<svg class="dd-caret" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#7c3aed" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>'+
+      '<div class="dd-menu" role="listbox">'+ Array.prototype.map.call(sel.options, function(o,i){
+        return '<div class="dd-item'+(o.selected?' on':'')+'" data-i="'+i+'">'+o.textContent+'</div>';
+      }).join('') +'</div>';
+    sel.parentNode.insertBefore(wrap, sel.nextSibling);
+    var trig = wrap.querySelector('.dd-trigger');
+    var menu = wrap.querySelector('.dd-menu');
+    var valEl = wrap.querySelector('.dd-val');
+    trig.addEventListener('click', function(e){
+      e.stopPropagation();
+      var open = wrap.classList.contains('open');
+      document.querySelectorAll('.dd.open').forEach(function(d){ if(d!==wrap) d.classList.remove('open'); });
+      wrap.classList.toggle('open', !open);
+    });
+    menu.querySelectorAll('.dd-item').forEach(function(it){
+      it.addEventListener('click', function(){
+        var idx = +it.dataset.i;
+        sel.selectedIndex = idx;
+        sel.value = sel.options[idx].value;
+        valEl.textContent = sel.options[idx].textContent;
+        menu.querySelectorAll('.dd-item').forEach(function(x){ x.classList.remove('on'); });
+        it.classList.add('on');
+        wrap.classList.remove('open');
+      });
+    });
+  });
+  document.addEventListener('click', function(){ document.querySelectorAll('.dd.open').forEach(function(d){ d.classList.remove('open'); }); });
+}
+initDropdowns();
+
+document.querySelectorAll('.seg').forEach(function(s){
+  s.addEventListener('click', function(e){
+    if(e.target.tagName==='BUTTON'){ s.querySelectorAll('button').forEach(b=>b.classList.remove('on')); e.target.classList.add('on'); }
+  });
+});
+</script>
+
+
+
+
+
+
+</body></html>
